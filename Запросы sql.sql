@@ -9,7 +9,7 @@ CREATE TABLE `u385484_tt`.`QAL_cinema` (
 	`date` DATE NULL DEFAULT NULL
 );
 
-CREATE TABLE `QAL_country` (
+CREATE TABLE `u385484_tt`.`QAL_country` (
 	`id_country` INT(11) NOT NULL AUTO_INCREMENT,
 	`country` VARCHAR(250) NULL DEFAULT NULL
 );
@@ -19,7 +19,7 @@ CREATE TABLE `u385484_tt`.`QAL_genre` (
 	`genre` VARCHAR(250) NULL DEFAULT NULL
 );
 
---Запросы на наполнение таблицы
+--Запросы на наполнение таблиц
 
 INSERT INTO `u385484_tt`.`QAL_cinema` (`film`, `director`, `id_country`, `id_genre`, `date`)
  VALUES ('Шерлок Холмс и доктор Ватсон: Знакомство', 'Игорь Масленников', '1', '1', '1980-06-22');
@@ -35,7 +35,33 @@ INSERT INTO `u385484_tt`.`QAL_cinema` (`film`, `director`, `id_country`, `id_gen
   
 INSERT INTO `u385484_tt`.`QAL_cinema` (`film`, `director`, `id_country`, `id_genre`)
  VALUES ('Операция ы и другие приключения Шурика', 'Леонид Гайдай', '1', '5'); 
- -- Добавить заполнение других таблиц
+ 
+ INSERT INTO `u385484_tt`.`QAL_country` (`country`)
+ 	VALUES ('СССР');
+ 
+ INSERT INTO `u385484_tt`.`QAL_country` (`country`)
+ 	VALUES ('США');
+ 	
+INSERT INTO `u385484_tt`.`QAL_country` (`country`)
+ 	VALUES ('Франция');
+ 	
+INSERT INTO `u385484_tt`.`QAL_country` (`country`)
+ 	VALUES ('Япония');
+ 	
+INSERT INTO `u385484_tt`.`QAL_genre` (`genre`)
+ 	VALUES ('Детектив'); 
+ 	
+INSERT INTO `u385484_tt`.`QAL_genre` (`genre`)
+ 	VALUES ('Фантастика'); 	 
+
+INSERT INTO `u385484_tt`.`QAL_genre` (`genre`)
+ 	VALUES ('Боевик'); 	
+ 	
+INSERT INTO `u385484_tt`.`QAL_genre` (`genre`)
+ 	VALUES ('Аниме'); 
+ 	
+INSERT INTO `u385484_tt`.`QAL_genre` (`genre`)
+ 	VALUES ('Комедия'); 
  
 --Запрос на обновление данных
 
@@ -101,7 +127,6 @@ ON QAL_cinema.id_country=QAL_country.id_country
 INNER JOIN `QAL_genre`
 ON QAL_cinema.id_genre=QAL_genre.id_genre
 order by `date` DESC 
-
 
 --Запрос на удаление строки
 
